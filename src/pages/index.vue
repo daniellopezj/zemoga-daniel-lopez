@@ -1,12 +1,12 @@
 <template>
-  <body>
     <Header />
     <Nav />
-    <top-banner />
-    <main role="main"></main>
-    <button-banner />
+    <div class="max-centered">
+      <top-banner />
+      <main role="main"></main>
+      <button-banner />
+    </div>
     <Footer />
-  </body>
 </template>
 
 <script setup lang="ts"></script>
