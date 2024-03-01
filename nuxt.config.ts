@@ -12,6 +12,9 @@ export default defineNuxtConfig({
       title: 'Zenoga Daniel',
     },
   },
+  routeRules: {
+     '/': { prerender: true },
+  },
   css: ['~/assets/scss/styles.scss'],
   srcDir: 'src/',
 })
