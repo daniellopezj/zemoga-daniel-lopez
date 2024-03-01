@@ -47,8 +47,7 @@ const celebrities: Ref<Celebrity[]> = ref(data.data);
   .list {
     &__container {
       overflow-x: initial;
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      flex-direction: column;
     }
     &__element {
       height: 200px;
@@ -67,10 +66,9 @@ const celebrities: Ref<Celebrity[]> = ref(data.data);
 @media all and (min-width: 1100px) {
   .list {
     &__container {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      overflow-x: initial;
+      flex-direction: column;
     }
-
     &__element {
       height: 200px;
     }

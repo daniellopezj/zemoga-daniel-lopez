@@ -24,7 +24,7 @@ const options = [
 ];
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .list__header {
   display: flex;
   justify-content: space-between;
@@ -42,6 +42,14 @@ const options = [
     height: 40px;
     text-align: center;
     font-size: 1em;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .list__header {
+    &-select {
+      display: none;
+    }
   }
 }
 </style>
