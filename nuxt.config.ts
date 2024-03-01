@@ -9,5 +9,7 @@ export default defineNuxtConfig({
       title: 'Zenoga Daniel',
     },
   },
+  css: ['~/assets/scss/styles.scss'],
   srcDir: 'src/',
+
 })
