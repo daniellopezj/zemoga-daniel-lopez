@@ -7,8 +7,8 @@
       <List />
     </main>
     <button-banner />
-  </div>
   <Footer />
+  </div>
 </template>
 
 <script setup lang="ts"></script>

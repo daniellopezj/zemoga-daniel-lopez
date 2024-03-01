@@ -1,13 +1,10 @@
 <template>
   <header class="hero">
-    <img
+    <NuxtImg
       class="hero__background"
-      srcset="
-        assets/img/pope-francis.png      750w,
-        assets/img/pope-francis.@2x.png 1440w
-      "
+      srcset="/img/pope-francis.png 750w, /img/pope-francis.@2x.png 1440w"
       sizes="(min-width: 750px) 1440px, 100vw"
-      src="assets/img/pope-francis.png"
+      src="/img/pope-francis.png"
       alt="Pope Francis"
     />
     <div class="max-centered">
@@ -40,10 +37,10 @@
           <p class="featured-card__cta">What’s Your Veredict?</p>
           <div class="featured-card__buttons">
             <button class="icon-button" aria-label="thumbs up">
-              <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+              <NuxtImg src="img/thumbs-up.svg" alt="thumbs up" />
             </button>
             <button class="icon-button" aria-label="thumbs down">
-              <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+              <NuxtImg src="img/thumbs-down.svg" alt="thumbs down" />
             </button>
           </div>
         </div>
@@ -110,7 +107,7 @@
         var(--color-dark-background),
         var(--color-dark-background)
       ),
-    -25vw 0/160vw no-repeat url('@/assets/img/pope-francis.png');
+    -25vw 0/160vw no-repeat url('@/img/pope-francis.png');
   filter: blur(1rem);
 }
 
@@ -235,7 +232,7 @@
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      7vw -6.5rem/115vw auto no-repeat url(@/assets/img/pope-francis.png);
+      7vw -6.5rem/115vw auto no-repeat url(@/img/pope-francis.png);
   }
 
   .featured-card__content {
@@ -279,7 +276,7 @@
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(@/assets/img/pope-francis.png);
+      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(@/img/pope-francis.png);
   }
 
   .featured-card__content {

@@ -4,6 +4,7 @@ export interface Votes{
 }
 
 export interface Celebrity {
+  id: string;
   name: string;
   description: string;
   category: string;

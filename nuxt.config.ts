@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
+  modules: [
+    '@nuxt/image',
+  ],
   app: {
     head: {
       title: 'Zenoga Daniel',
