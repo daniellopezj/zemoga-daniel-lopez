@@ -1,16 +1,18 @@
 <template>
-  <div
-    class="listContent__container"
-    :class="{ 'listContent__grid-view': typeView === 'grid' }"
-  >
-    <list-item
-      class="listContent__element"
-      v-for="celebrity in celebrities"
-      :key="celebrity.id"
-      :celebrity="celebrity"
-      :view="typeView"
-    />
-  </div>
+  <client-only>
+    <div
+      class="listContent__container"
+      :class="{ 'listContent__grid-view': typeView === 'grid' }"
+    >
+      <list-item
+        class="listContent__element"
+        v-for="celebrity in celebrities"
+        :key="celebrity.id"
+        :celebrity="celebrity"
+        :view="typeView"
+      />
+    </div>
+  </client-only>
 </template>
 
 <script setup lang="ts">
