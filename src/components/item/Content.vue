@@ -52,6 +52,14 @@ const props = defineProps({
   },
 });
 
+
+const storeCelebrities =  useCelebrityStore()
+const { vote } = storeCelebrities
+
+const actionSelected = ref<'like' | 'dislike' | ''>('');
+const currentCelebrity = ref<Celebrity>(props.celebrity);
+const pendingVoted = ref(true);
+
 const addVote = () => {
   pendingVoted.value = !pendingVoted.value;
   if (pendingVoted) {
@@ -59,11 +67,6 @@ const addVote = () => {
     actionSelected.value = '';
   }
 };
-const storeCelebrities =  useCelebrityStore()
-const { vote } = storeCelebrities
-const actionSelected = ref<'like' | 'dislike' | ''>('');
-const currentCelebrity = ref<Celebrity>(props.celebrity);
-const pendingVoted = ref(true);
 
 const textButton = computed(() =>
   pendingVoted.value ? 'Vote Now' : 'Vote Again',
