@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxt/image',
+    '@pinia/nuxt',
   ],
   app: {
     head: {
@@ -13,7 +14,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-     '/': { prerender: true },
+    '/': { prerender: true },
   },
   css: ['~/assets/scss/styles.scss'],
   srcDir: 'src/',

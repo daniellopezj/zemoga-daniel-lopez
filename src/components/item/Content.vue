@@ -37,6 +37,7 @@
 </template>
 
 <script setup lang="ts">
+import { useCelebrityStore } from '~/store/useCelebrityStore';
 import type { Celebrity } from '~/types/general.types';
 
 const props = defineProps({
@@ -51,22 +52,21 @@ const props = defineProps({
   },
 });
 
-const addVote = () => {
-  pendingVoted.value = !pendingVoted.value;
-  if (pendingVoted) {
-    if (actionSelected.value === 'like') {
-      currentCelebrity.value.votes.positive++;
-    }
-    if (actionSelected.value === 'dislike') {
-      currentCelebrity.value.votes.negative++;
-    }
-    actionSelected.value = '';
-  }
-};
+
+const storeCelebrities =  useCelebrityStore()
+const { vote } = storeCelebrities
 
 const actionSelected = ref<'like' | 'dislike' | ''>('');
 const currentCelebrity = ref<Celebrity>(props.celebrity);
 const pendingVoted = ref(true);
+
+const addVote = () => {
+  pendingVoted.value = !pendingVoted.value;
+  if (pendingVoted) {
+    vote(currentCelebrity.value, actionSelected.value)
+    actionSelected.value = '';
+  }
+};
 
 const textButton = computed(() =>
   pendingVoted.value ? 'Vote Now' : 'Vote Again',

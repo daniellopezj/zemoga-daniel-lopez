@@ -1,7 +1,7 @@
 <template>
   <button
     class="reaction__container icon-button"
-    :class="{ reaction__active: action === type }"
+    :class="{ reaction__active: action === type}"
     @click="action = type"
     :aria-label="typeThumb"
   >

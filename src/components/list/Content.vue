@@ -14,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import data from '@/assets/data/data.json';
-import type { Celebrity } from '@/types/general.types';
+import { useCelebrityStore } from '~/store/useCelebrityStore';
+import type { Celebrity } from '~/types/general.types';
 
 defineProps({
   typeView: {
@@ -24,7 +24,13 @@ defineProps({
   },
 });
 
-const celebrities: Ref<Celebrity[]> = ref(data.data);
+const useCelebrity = useCelebrityStore();
+const { fetchCelebrities } = useCelebrity;
+const celebrities: Ref<Celebrity[]> = ref([]);
+
+onBeforeMount(() => {
+  celebrities.value = fetchCelebrities();
+});
 </script>
 
 <style scoped lang="scss">
