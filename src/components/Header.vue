@@ -107,7 +107,7 @@
         var(--color-dark-background),
         var(--color-dark-background)
       ),
-    -25vw 0/160vw no-repeat url('../public/img/pope-francis.png');
+    -25vw 0/160vw no-repeat url('/img/pope-francis.png');
   filter: blur(1rem);
 }
 
@@ -232,7 +232,7 @@
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      7vw -6.5rem/115vw auto no-repeat url(../public/img/pope-francis.png);
+      7vw -6.5rem/115vw auto no-repeat url(/img/pope-francis.png);
   }
 
   .featured-card__content {
@@ -276,7 +276,7 @@
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(../public/img/pope-francis.png);
+      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(/img/pope-francis.png);
   }
 
   .featured-card__content {
