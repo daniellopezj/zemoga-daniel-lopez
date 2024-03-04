@@ -19,7 +19,7 @@
             pontiff? (thumbs up)
           </p>
           <p class="featured-card__more-info">
-            <a href="http://wikipedia.com">
+            <a href="#">
               <svg
                 class="featured-card__more-info-icon"
                 xmlns="http://www.w3.org/2000/svg"
