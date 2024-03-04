@@ -1,23 +1,26 @@
-# Nuxt 3 Minimal Starter
+# Zemoga Daniel López
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![nuxt Version](https://img.shields.io/badge/nuxt-v3.10.3-blue.svg)
+![Nuxt.js](https://img.shields.io/badge/Nuxt.js-green)
+![Vue Version](https://img.shields.io/badge/vue-v3.4.19-blue.svg)
+![vue.js](https://img.shields.io/badge/vue.js-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue)
+
+## [Demo](https://zemoga-daniel-lopez.vercel.app/)
+
 
 ## Setup
+
+Is necessary clone the repo  `github`
+
+```
+git clone https://github.com/daniellopezj/zemoga-daniel-lopez.git
+```
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
@@ -25,51 +28,12 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Report lighthouse 🚀
 
-Build the application for production:
+<img  width=600 src="src/public/img/readme/lighthouse.webp" alt="Vista principal">
 
-```bash
-# npm
-npm run build
 
-# pnpm
-pnpm run build
 
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
