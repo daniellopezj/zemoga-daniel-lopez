@@ -14,7 +14,7 @@
         <item-reaction />
       </span>
       <item-content :celebrity="celebrity" />
-      <item-progress />
+      <item-progress :celebrity="celebrity" />
     </div>
   </div>
 </template>
