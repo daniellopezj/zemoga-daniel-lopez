@@ -2,9 +2,9 @@
   <header class="hero">
     <NuxtImg
       class="hero__background"
-      srcset="/img/pope-francis.png 750w, /img/pope-francis.@2x.png 1440w"
+      srcset="/img/pope-francis.webp 750w, /img/pope-francis.@2x.webp 1440w"
       sizes="(min-width: 750px) 1440px, 100vw"
-      src="/img/pope-francis.png"
+      src="/img/pope-francis.webp"
       alt="Pope Francis"
     />
     <div class="max-centered">
@@ -107,7 +107,7 @@
         var(--color-dark-background),
         var(--color-dark-background)
       ),
-    -25vw 0/160vw no-repeat url('/img/pope-francis.png');
+    -25vw 0/160vw no-repeat url('/img/pope-francis.webp');
   filter: blur(1rem);
 }
 
@@ -232,7 +232,7 @@
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      7vw -6.5rem/115vw auto no-repeat url(/img/pope-francis.png);
+      7vw -6.5rem/115vw auto no-repeat url(/img/pope-francis.webp);
   }
 
   .featured-card__content {
@@ -276,7 +276,7 @@
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(/img/pope-francis.png);
+      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(/img/pope-francis.webp);
   }
 
   .featured-card__content {
