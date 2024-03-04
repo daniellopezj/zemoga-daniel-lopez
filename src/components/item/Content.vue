@@ -13,7 +13,7 @@
     </div>
     <div class="itemContent__reactions">
       <item-reaction />
-      <item-reaction />
+      <item-reaction :type="'dislike'" />
       <item-vote />
     </div>
   </div>

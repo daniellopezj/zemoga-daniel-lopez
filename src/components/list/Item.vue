@@ -11,7 +11,7 @@
     />
     <div class="item__body">
       <span class="item__icon">
-        <item-reaction />
+        <item-reaction :type="typeReaction" />
       </span>
       <item-content :celebrity="celebrity" />
       <item-progress :celebrity="celebrity" />
@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import type { Celebrity } from '~/types/general.types';
 
-defineProps({
+const props = defineProps({
   celebrity: {
     type: Object as PropType<Celebrity>,
     required: true,
@@ -32,6 +32,12 @@ defineProps({
     required: true,
     default: 'list',
   },
+});
+
+const typeReaction = computed(() => {
+  const { positive, negative } = props.celebrity.votes;
+  console.log(props.celebrity.name, positive, negative)
+  return positive > negative ? 'like' : 'dislike';
 });
 </script>
 

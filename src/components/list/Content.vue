@@ -25,6 +25,8 @@ const props = defineProps({
 });
 
 const celebrities: Ref<Celebrity[]> = ref(data.data);
+
+console.log(celebrities.value)
 </script>
 
 <style scoped lang="scss">
