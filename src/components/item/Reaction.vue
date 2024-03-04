@@ -44,7 +44,7 @@ const typeImage = computed(() =>
     width: 100%;
     height: 100%;
     max-width: 18px;
-    aspect-ratio: 1;
+    aspect-ratio: 0.6;
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <nav class="nav" role="navigation">
     <div class="max-centered">
       <h1 class="nav__logo">Rule of thumb.</h1>
-      <button name="menu" class="nav__hamburger icon-button" alt="Open Menu">
+      <button aria-label="name" class="nav__hamburger icon-button" alt="Open Menu">
         <svg width="25" height="20" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 0h25v4H0V0zm0 8h25v4H0V8zm0 8h25v4H0v-4z"
