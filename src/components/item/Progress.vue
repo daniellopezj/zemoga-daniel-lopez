@@ -25,16 +25,14 @@ const props = defineProps({
   },
 });
 
-const likes = ref(props.celebrity.votes.positive);
-const dislikes = ref(props.celebrity.votes.negative);
-
+const likes = computed(() => props.celebrity.votes.positive);
+const dislikes = computed(() => props.celebrity.votes.negative);
 const allVotes = computed(() => likes.value + dislikes.value);
 const likePercentage = computed(() => widthProgress(likes.value));
 const disLikePercentage = computed(() => widthProgress(dislikes.value));
 
-const widthProgress = (votes: number) => {
-  return `${((votes * 100) / allVotes.value).toFixed(1)}%`;
-};
+const widthProgress = (votes: number) =>
+  `${((votes * 100) / allVotes.value).toFixed(1)}%`;
 </script>
 
 <style scoped lang="scss">
@@ -71,11 +69,5 @@ const widthProgress = (votes: number) => {
     height: 100%;
     max-width: 18px;
   }
-}
-
-@media all and (min-width: 768px) {
-}
-
-@media all and (min-width: 1100px) {
 }
 </style>

@@ -13,8 +13,8 @@
       <span class="item__icon">
         <item-reaction :type="typeReaction" />
       </span>
-      <item-content :celebrity="celebrity" :view="view" />
-      <item-progress :celebrity="celebrity" />
+      <item-content :celebrity="currentCelebrity" :view="view" />
+      <item-progress :celebrity="currentCelebrity" />
     </div>
   </div>
 </template>
@@ -33,6 +33,10 @@ const props = defineProps({
     default: 'list',
   },
 });
+
+
+const currentCelebrity = ref(props.celebrity);
+
 
 const typeReaction = computed(() => {
   const { positive, negative } = props.celebrity.votes;
