@@ -52,8 +52,7 @@ defineProps({
 
 .item__icon {
   position: absolute;
-  top: 50%;
+  top: 33%;
   left: 0;
-  transform: translate(0, -50%);
 }
 </style>

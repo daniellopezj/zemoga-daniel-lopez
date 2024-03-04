@@ -14,6 +14,7 @@
     <div class="itemContent__reactions">
       <item-reaction />
       <item-reaction />
+      <item-vote />
     </div>
   </div>
 </template>
@@ -39,7 +40,7 @@ defineProps({
     color: white;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
   &__title {
     font-size: 30px;
@@ -64,6 +65,8 @@ defineProps({
   &__reactions {
     display: flex;
     gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   &__last-date {

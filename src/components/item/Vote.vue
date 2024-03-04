@@ -1,0 +1,17 @@
+<template>
+  <button class="vote">vote Now</button>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped lang="scss">
+.vote {
+  width: 115px;
+  height: 38px;
+  color: white;
+  white-space: nowrap;
+  border: 2px solid white;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.4);
+}
+</style>
