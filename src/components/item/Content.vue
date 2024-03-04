@@ -1,11 +1,20 @@
 <template>
   <div class="itemContent__container">
-    <h1>
+    <h1 class="itemContent__title">
       {{ celebrity.name }}
     </h1>
-    <span>
+    <span class="itemContent__description">
       {{ celebrity.description }}
     </span>
+    <div>
+      <span class="itemContent__last-date">
+        1 month ago in {{ celebrity.category }}
+      </span>
+    </div>
+    <div class="itemContent__reactions">
+      <item-reaction />
+      <item-reaction />
+    </div>
   </div>
 </template>
 
@@ -21,16 +30,46 @@ defineProps({
 </script>
 
 <style scoped lang="scss">
-.itemContent__container {
-  position: absolute;
-  top: 60%;
-  left: 38px;
-  right: 38px;
-  color: white;
-  transform: translate(0, -50%);
-  h1{
-font-size: 30px;
-font-weight: bold;
+.itemContent {
+  &__container {
+    position: absolute;
+    bottom: 15%;
+    left: 38px;
+    right: 38px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__description {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  &__title,
+  &__description {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__reactions {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__last-date {
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: nowrap;
   }
 }
 </style>

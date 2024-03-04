@@ -10,7 +10,9 @@
       :alt="celebrity.name"
     />
     <div class="item__body">
-      <span class="item__icon">hola</span>
+      <span class="item__icon">
+        <item-reaction />
+      </span>
       <item-content :celebrity="celebrity" />
       <item-progress />
     </div>
@@ -41,11 +43,11 @@ defineProps({
 .item__body {
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 .item__icon {
