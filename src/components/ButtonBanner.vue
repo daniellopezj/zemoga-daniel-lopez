@@ -1,10 +1,10 @@
 <template>
   <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
     <NuxtImg
-      srcset="img/bg-people.png 750w, img/bg-people.@2x.png 1440w"
+      srcset="img/bg-people.webp 750w, img/bg-people.@2x.webp 1440w"
       sizes="(min-width: 750px) 1440px, 100vw"
       class="banner__background"
-      src="img/bg-people.png"
+      src="img/bg-people.webp"
       alt=""
       role="none"
     />

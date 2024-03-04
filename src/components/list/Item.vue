@@ -1,12 +1,12 @@
 <template>
   <div class="item" :class="{ 'item__grid-view': view === 'grid' }">
     <NuxtImg
-      :srcset="`img/celebrities/${celebrity.picture}.png     350w,
-        img/celebrities/${celebrity.picture}@2x.png 750w`"
+      :srcset="`img/celebrities/${celebrity.picture}.webp     350w,
+        img/celebrities/${celebrity.picture}@2x.webp 750w`"
       sizes="50vw md:55vw xl:400px"
       loading="lazy"
       class="item__image"
-      :src="`/img/${celebrity.picture}.png`"
+      :src="`/img/${celebrity.picture}.webp`"
       :alt="celebrity.name"
     />
     <div class="item__body">
