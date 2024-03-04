@@ -37,10 +37,10 @@
           <p class="featured-card__cta">What’s Your Veredict?</p>
           <div class="featured-card__buttons">
             <button class="icon-button" aria-label="thumbs up">
-              <NuxtImg src="img/thumbs-up.svg" alt="thumbs up" />
+              <NuxtImg class="icon-svg" src="img/thumbs-up.svg" alt="thumbs up" />
             </button>
             <button class="icon-button" aria-label="thumbs down">
-              <NuxtImg src="img/thumbs-down.svg" alt="thumbs down" />
+              <NuxtImg class="icon-svg" src="img/thumbs-down.svg" alt="thumbs down" />
             </button>
           </div>
         </div>
@@ -158,7 +158,9 @@
 }
 
 .featured-card__buttons > .icon-button > img {
-  max-width: 1.25rem;
+  max-width: 18px;
+  max-height: 18px;
+  aspect-ratio: 1;
 }
 
 .featured-card__more-info {
@@ -214,6 +216,7 @@
   font-size: 1.5rem;
   font-weight: 300;
 }
+
 
 @media all and (min-width: 768px) {
   .hero {
@@ -302,8 +305,9 @@
   }
 
   .featured-card__buttons > .icon-button > img {
-    max-width: 2rem;
-    height: 2rem;
+    max-width: 36px;
+    max-height: 2rem;
+    aspect-ratio: 1;
     margin: 1.3rem 0;
   }
 
