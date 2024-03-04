@@ -7,13 +7,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@pinia/nuxt',
+    ['@nuxtjs/robots', { configPath: '~/config/robots.config' }],
   ],
   app: {
     head: {
       htmlAttrs: {
         lang: 'en',
       },
-      title: 'Zenoga Daniel',
+      title: 'Zenoga Daniel López',
     },
   },
   routeRules: {
