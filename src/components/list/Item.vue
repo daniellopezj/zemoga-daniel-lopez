@@ -11,7 +11,7 @@
     />
     <div class="item__body">
       <span class="item__icon">
-        <item-reaction :type="typeReaction" />
+        <item-reaction key="trading" :disabled="true" :type="typeReaction" />
       </span>
       <item-content :celebrity="currentCelebrity" :view="view" />
       <item-progress :celebrity="currentCelebrity" />
@@ -34,9 +34,7 @@ const props = defineProps({
   },
 });
 
-
 const currentCelebrity = ref(props.celebrity);
-
 
 const typeReaction = computed(() => {
   const { positive, negative } = props.celebrity.votes;
