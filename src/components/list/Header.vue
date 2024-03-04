@@ -2,7 +2,7 @@
   <div class="list__header">
     <h2 class="list__header-title">Previous Rulings</h2>
     <div clas>
-      <select class="list__header-select" v-model="selected">
+      <select aria-label="option-grid" class="list__header-select" v-model="selected">
         <option
           class="list__header-option"
           v-for="option in options"
