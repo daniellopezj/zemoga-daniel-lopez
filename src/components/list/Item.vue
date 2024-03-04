@@ -77,6 +77,11 @@ const typeReaction = computed(() => {
       rgb(102, 102, 102, 1) 100%
     );
   }
+  
+  .item__image{
+    max-width: 100%;
+    max-height: 100%;
+  }
 
   .item__grid-view {
     .item__body {
@@ -107,6 +112,8 @@ const typeReaction = computed(() => {
       rgb(102, 102, 102, 1) 100%
     );
   }
+
+ 
 
   .item__grid-view {
     .item__body {

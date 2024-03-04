@@ -14,7 +14,7 @@
       </h2>
     </div>
     <div class="banner__right">
-      <button class="banner__cta">Submit a name</button>
+      <span class="banner__cta">Submit a name</span>
     </div>
   </aside>
   <hr role="separator" />
