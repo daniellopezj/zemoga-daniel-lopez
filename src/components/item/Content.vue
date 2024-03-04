@@ -8,7 +8,7 @@
     </span>
     <div>
       <span class="itemContent__last-date">
-        1 month ago in {{ celebrity.category }}
+        {{ timeAgo(celebrity.lastUpdated) }} in {{ celebrity.category }}
       </span>
     </div>
     <div class="itemContent__reactions">
@@ -28,6 +28,23 @@ defineProps({
     required: true,
   },
 });
+
+const timeAgo = (dateString: string) => {
+  const now = new Date();
+  const date = new Date(dateString);
+  const miliSeconds = now.getTime() - date.getTime();
+  const minutes = Math.floor(miliSeconds / 1000 / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const months = Math.floor(days / 30);
+  const years = Math.floor(days / 365);
+  if (years) return `${years} years ago`;
+  if (months) return `${months} months ago`;
+  if (days) return `${days} days ago`;
+  if (hours) return `${hours} hours ago`;
+  if (minutes) return `${minutes} minutes ago`;
+  return 'Just now';
+};
 </script>
 
 <style scoped lang="scss">

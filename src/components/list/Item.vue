@@ -36,7 +36,6 @@ const props = defineProps({
 
 const typeReaction = computed(() => {
   const { positive, negative } = props.celebrity.votes;
-  console.log(props.celebrity.name, positive, negative)
   return positive > negative ? 'like' : 'dislike';
 });
 </script>
