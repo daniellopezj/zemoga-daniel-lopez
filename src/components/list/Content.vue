@@ -1,10 +1,10 @@
 <template>
   <div
-    class="list__container"
-    :class="{ 'list__grid-view': typeView === 'grid' }"
+    class="listContent__container"
+    :class="{ 'listContent__grid-view': typeView === 'grid' }"
   >
     <list-item
-      class="list__element"
+      class="listContent__element"
       v-for="celebrity in celebrities"
       :key="celebrity.id"
       :celebrity="celebrity"
@@ -17,7 +17,7 @@
 import data from '@/assets/data/data.json';
 import type { Celebrity } from '@/types/general.types';
 
-const props = defineProps({
+defineProps({
   typeView: {
     type: String as PropType<'grid' | 'list'>,
     required: true,
@@ -25,12 +25,10 @@ const props = defineProps({
 });
 
 const celebrities: Ref<Celebrity[]> = ref(data.data);
-
-console.log(celebrities.value)
 </script>
 
 <style scoped lang="scss">
-.list {
+.listContent {
   &__container {
     display: flex;
     flex-wrap: nowrap;
@@ -46,7 +44,7 @@ console.log(celebrities.value)
 }
 
 @media all and (min-width: 768px) {
-  .list {
+  .listContent {
     &__container {
       overflow-x: initial;
       flex-direction: column;
@@ -57,7 +55,7 @@ console.log(celebrities.value)
     &__grid-view {
       display: grid;
       grid-template-columns: repeat(2, 1fr) !important;
-      .list__element {
+      .listContent__element {
         height: initial;
         min-width: initial;
       }
@@ -66,7 +64,7 @@ console.log(celebrities.value)
 }
 
 @media all and (min-width: 1100px) {
-  .list {
+  .listContent {
     &__container {
       overflow-x: initial;
       flex-direction: column;
@@ -78,7 +76,7 @@ console.log(celebrities.value)
       display: grid;
       overflow-x: initial;
       grid-template-columns: repeat(3, 1fr) !important;
-      .list__element {
+      .listContent__element {
         height: initial;
         min-width: initial;
       }

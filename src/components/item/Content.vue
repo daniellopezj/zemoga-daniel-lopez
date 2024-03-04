@@ -57,7 +57,7 @@ const timeAgo = (dateString: string) => {
     color: white;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
   }
   &__title {
     font-size: 30px;
