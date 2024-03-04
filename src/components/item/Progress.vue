@@ -68,6 +68,8 @@ const widthProgress = (votes: number) =>
     width: 100%;
     height: 100%;
     max-width: 18px;
+    max-height: 18px;
+    aspect-ratio: 1;
   }
 }
 </style>
