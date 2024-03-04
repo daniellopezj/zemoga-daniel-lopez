@@ -1,6 +1,6 @@
 <template>
   <div class="list__header">
-    <h3 class="list__header-title">Previous Rulings</h3>
+    <h2 class="list__header-title">Previous Rulings</h2>
     <div clas>
       <select class="list__header-select" v-model="selected">
         <option
