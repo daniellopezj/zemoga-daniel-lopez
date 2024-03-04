@@ -13,13 +13,24 @@
     </div>
     <div class="itemContent__second-line">
       <span class="itemContent__last-date">
-        {{ timeAgo(celebrity.lastUpdated) }} in {{ celebrity.category }}
+        {{ EyebrowText }}
       </span>
-
       <div class="itemContent__reactions">
-        <item-reaction :type="'like'" />
-        <item-reaction :type="'dislike'" />
-        <item-vote />
+        <item-reaction
+          v-if="pendingVoted"
+          v-model="actionSelected"
+          :type="'like'"
+        />
+        <item-reaction
+          v-if="pendingVoted"
+          v-model="actionSelected"
+          :type="'dislike'"
+        />
+        <item-vote
+          @voted="addVote"
+          :text="textButton"
+          :disabled="actionSelected === '' && pendingVoted"
+        />
       </div>
     </div>
   </div>
@@ -28,7 +39,7 @@
 <script setup lang="ts">
 import type { Celebrity } from '~/types/general.types';
 
-defineProps({
+const props = defineProps({
   celebrity: {
     type: Object as PropType<Celebrity>,
     required: true,
@@ -38,6 +49,32 @@ defineProps({
     required: true,
     default: 'list',
   },
+});
+
+const addVote = () => {
+  pendingVoted.value = !pendingVoted.value;
+  if (pendingVoted) {
+    if (actionSelected.value === 'like') {
+      currentCelebrity.value.votes.positive++;
+    }
+    if (actionSelected.value === 'dislike') {
+      currentCelebrity.value.votes.negative++;
+    }
+    actionSelected.value = '';
+  }
+};
+
+const actionSelected = ref<'like' | 'dislike' | ''>('');
+const currentCelebrity = ref<Celebrity>(props.celebrity);
+const pendingVoted = ref(true);
+
+const textButton = computed(() =>
+  pendingVoted.value ? 'Vote Now' : 'Vote Again',
+);
+const EyebrowText = computed(() => {
+  return pendingVoted.value
+    ? `${timeAgo(props.celebrity.lastUpdated)} in ${props.celebrity.category}`
+    : 'Thank you for your vote!';
 });
 
 const timeAgo = (dateString: string) => {

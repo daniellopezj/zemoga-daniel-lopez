@@ -1,10 +1,17 @@
 <template>
-  <button class="reaction__container icon-button" :aria-label="typeThumb">
+  <button
+    class="reaction__container icon-button"
+    :class="{ reaction__active: action === type }"
+    @click="action = type"
+    :aria-label="typeThumb"
+  >
     <NuxtImg class="reaction__icon" :src="typeImage" :alt="typeThumb" />
   </button>
 </template>
 
 <script setup lang="ts">
+const action = defineModel();
+
 const props = defineProps({
   type: {
     type: String as PropType<'like' | 'dislike'>,
@@ -27,6 +34,10 @@ const typeImage = computed(() =>
   &__container {
     width: 30px;
     height: 30px;
+  }
+  
+  &__active{
+    border: 2px solid white;
   }
 
   &__icon {
