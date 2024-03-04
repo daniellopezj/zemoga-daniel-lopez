@@ -28,10 +28,8 @@ const options = [
 .list__header {
   display: flex;
   justify-content: space-between;
-
   &-title {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2rem;
     margin: 0;
   }
   &-select {
@@ -52,4 +50,5 @@ const options = [
     }
   }
 }
+
 </style>
