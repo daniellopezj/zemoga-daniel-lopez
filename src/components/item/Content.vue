@@ -17,7 +17,7 @@
       </span>
 
       <div class="itemContent__reactions">
-        <item-reaction />
+        <item-reaction :type="'like'" />
         <item-reaction :type="'dislike'" />
         <item-vote />
       </div>
