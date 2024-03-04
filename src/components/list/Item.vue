@@ -51,13 +51,31 @@ const typeReaction = computed(() => {
   bottom: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 .item__icon {
   position: absolute;
   top: 33%;
   left: 0;
+}
+
+@media all and (min-width: 768px) {
+  .item__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .item__body {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 10%,
+      rgb(175, 175, 175, 1) 17%,
+      rgb(102, 102, 102, 1) 100%
+    );
+  }
+}
+
+@media all and (min-width: 1100px) {
 }
 </style>

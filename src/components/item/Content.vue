@@ -92,4 +92,22 @@ const timeAgo = (dateString: string) => {
     flex-wrap: nowrap;
   }
 }
+
+@media all and (min-width: 768px) {
+  .itemContent {
+  &__container {
+    position: absolute;
+    bottom: 15%;
+    left: 220px;
+    right: 38px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+}
+
+@media all and (min-width: 1100px) {
+}
 </style>

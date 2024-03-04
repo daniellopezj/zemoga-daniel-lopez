@@ -50,7 +50,7 @@ const celebrities: Ref<Celebrity[]> = ref(data.data);
       flex-direction: column;
     }
     &__element {
-      height: 200px;
+      height: 150px;
     }
     &__grid-view {
       display: grid;
