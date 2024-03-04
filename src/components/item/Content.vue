@@ -1,20 +1,26 @@
 <template>
-  <div class="itemContent__container">
-    <h1 class="itemContent__title">
-      {{ celebrity.name }}
-    </h1>
-    <span class="itemContent__description">
-      {{ celebrity.description }}
-    </span>
-    <div>
+  <div
+    class="itemContent__container"
+    :class="{ 'itemContent__grid-view': view === 'grid' }"
+  >
+    <div class="itemContent__first-line">
+      <h1 class="itemContent__title">
+        {{ celebrity.name }}
+      </h1>
+      <span class="itemContent__description">
+        {{ celebrity.description }}
+      </span>
+    </div>
+    <div class="itemContent__second-line">
       <span class="itemContent__last-date">
         {{ timeAgo(celebrity.lastUpdated) }} in {{ celebrity.category }}
       </span>
-    </div>
-    <div class="itemContent__reactions">
-      <item-reaction />
-      <item-reaction :type="'dislike'" />
-      <item-vote />
+
+      <div class="itemContent__reactions">
+        <item-reaction />
+        <item-reaction :type="'dislike'" />
+        <item-vote />
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +32,11 @@ defineProps({
   celebrity: {
     type: Object as PropType<Celebrity>,
     required: true,
+  },
+  view: {
+    type: String as PropType<'grid' | 'list'>,
+    required: true,
+    default: 'list',
   },
 });
 
@@ -59,6 +70,13 @@ const timeAgo = (dateString: string) => {
     flex-direction: column;
     gap: 0.75rem;
   }
+
+  &__first-line,
+  &__second-line {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
   &__title {
     font-size: 30px;
     font-weight: bold;
@@ -87,27 +105,71 @@ const timeAgo = (dateString: string) => {
   }
 
   &__last-date {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     justify-content: flex-end;
     display: flex;
-    flex-wrap: nowrap;
+    white-space: nowrap;
   }
 }
 
 @media all and (min-width: 768px) {
   .itemContent {
-  &__container {
-    position: absolute;
-    bottom: 15%;
-    left: 220px;
-    right: 38px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    &__container {
+      top: 5%;
+      left: 150px;
+      right: 16px;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+    &__title {
+      font-size: 28px;
+      -webkit-line-clamp: 1;
+      font-weight: initial;
+    }
+    &__last-date {
+      font-size: 14px;
+    }
   }
-}
+  .itemContent__grid-view {
+    bottom: 15% !important;
+    left: 38px !important;
+    right: 38px !important;
+    flex-direction: column;
+    top: initial;
+  }
 }
 
 @media all and (min-width: 1100px) {
+  .itemContent {
+    &__container {
+      top: 5%;
+      left: 220px;
+      right: 16px;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+    &__title {
+      font-size: 28px;
+      -webkit-line-clamp: 1;
+      font-weight: initial;
+    }
+    &__last-date {
+      font-size: 14px;
+    }
+  }
+  .itemContent__grid-view {
+    bottom: 17% !important;
+    left: 38px !important;
+    right: 38px !important;
+    flex-direction: column;
+    top: initial;
+    .itemContent__title {
+      font-size: 28px;
+      -webkit-line-clamp: 2 !important;
+      font-weight: initial;
+    }
+  }
 }
 </style>

@@ -72,4 +72,10 @@ const widthProgress = (votes: number) => {
     max-width: 18px;
   }
 }
+
+@media all and (min-width: 768px) {
+}
+
+@media all and (min-width: 1100px) {
+}
 </style>

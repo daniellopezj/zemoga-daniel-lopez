@@ -50,4 +50,5 @@ const options = [
     }
   }
 }
+
 </style>

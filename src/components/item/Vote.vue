@@ -6,6 +6,7 @@
 
 <style scoped lang="scss">
 .vote {
+  cursor: pointer;
   width: 115px;
   height: 38px;
   color: white;
@@ -14,4 +15,12 @@
   text-transform: capitalize;
   background: rgba(0, 0, 0, 0.4);
 }
+
+
+@media all and (min-width: 768px) {
+  .vote {
+  font-size: 18px;
+}
+}
+
 </style>

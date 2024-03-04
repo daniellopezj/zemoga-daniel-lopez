@@ -1,5 +1,5 @@
 <template>
-  <div class="item">
+  <div class="item" :class="{ 'item__grid-view': view === 'grid' }">
     <NuxtImg
       :srcset="`img/celebrities/${celebrity.picture}.png     350w,
         img/celebrities/${celebrity.picture}@2x.png 750w`"
@@ -13,7 +13,7 @@
       <span class="item__icon">
         <item-reaction :type="typeReaction" />
       </span>
-      <item-content :celebrity="celebrity" />
+      <item-content :celebrity="celebrity" :view="view" />
       <item-progress :celebrity="celebrity" />
     </div>
   </div>
@@ -51,6 +51,7 @@ const typeReaction = computed(() => {
   bottom: 0;
   width: 100%;
   height: 100%;
+  background: linear-gradient(180deg, rgb(0, 0, 0, 0) 40%, rgb(0, 0, 0) 100%);
 }
 
 .item__icon {
@@ -74,8 +75,48 @@ const typeReaction = computed(() => {
       rgb(102, 102, 102, 1) 100%
     );
   }
+
+  .item__grid-view {
+    .item__body {
+      background: linear-gradient(
+        180deg,
+        rgb(0, 0, 0, 0) 40%,
+        rgb(0, 0, 0) 100%
+      );
+    }
+    .item__icon {
+      top: 40%;
+    }
+  }
 }
 
 @media all and (min-width: 1100px) {
+  .item__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .item__body {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 10%,
+      rgb(175, 175, 175, 1) 17%,
+      rgb(102, 102, 102, 1) 100%
+    );
+  }
+
+  .item__grid-view {
+    .item__body {
+      background: linear-gradient(
+        180deg,
+        rgb(0, 0, 0, 0) 40%,
+        rgb(0, 0, 0) 100%
+      );
+    }
+    .item__icon {
+      top: 40%;
+    }
+  }
 }
 </style>
